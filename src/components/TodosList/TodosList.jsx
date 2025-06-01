@@ -39,9 +39,9 @@ function TodosList() {
   const filteredTodos = error
     ? []
     : todos.filter((todo) => {
-        const matchesTitle = todo.title.toLowerCase().includes(search.toLowerCase());
-        const matchesCompletion = completedOnly ? todo.completed : true;
-        return matchesTitle && matchesCompletion;
+        const title = todo.title.toLowerCase().includes(search.toLowerCase());
+        const completion = completedOnly ? todo.completed : true;
+        return title && completion;
       });
 
   const completedCount = filteredTodos.filter((todo) => todo.completed).length;
